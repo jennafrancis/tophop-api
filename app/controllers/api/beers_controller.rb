@@ -1,6 +1,6 @@
-class MoviesController < ApplicationController
+class Api::BeersController < ApplicationController
   def index
-    @movies = Movie.all
-    render json: @movies
+    @beers = Beer.all
+    render json: @beers
   end
 end
