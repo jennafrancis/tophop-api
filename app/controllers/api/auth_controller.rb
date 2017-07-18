@@ -1,6 +1,6 @@
 class Api::AuthController < ApplicationController
   def login
-    @user = User.find_by(email: params [:user][:email])
+    @user = User.find_by(email: params[:user][:email])
     if !@user
       render json: {
         errors: {
@@ -8,7 +8,7 @@ class Api::AuthController < ApplicationController
         }
       }, status: 500
     elsif @user && @user.authenticate(params[:user][:password])
-      render 'users/user_with_wuth_token.json.jbuilder', user: @user
+      render 'users/user_with_token.json.jbuilder', user: @user
     else
       render json: {
         errors: {
