@@ -9,7 +9,17 @@ class Api::BeersController < ApplicationController
     if @beer.save
       render json: @beer
     else
-      render json: { errors: { message: "This beer failed to save."}}
+      render json: { errors: { message: "This beer failed to save." } }
+    end
+  end
+
+  def destroy
+    id = (params[:id])
+    @beer = Beer.find(id)
+    if @beer
+      @beer.destroy
+    else
+      render json: { errors: { message: "This beer was not found." } }
     end
   end
 
