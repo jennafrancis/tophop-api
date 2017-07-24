@@ -74,7 +74,6 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
-    pg (0.18.4)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -143,7 +142,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jwt (~> 1.5.6)
   listen (~> 3.0.5)
-  pg
   pry
   puma (~> 3.0)
   rack-cors
