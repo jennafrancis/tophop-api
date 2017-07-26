@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718194848) do
+ActiveRecord::Schema.define(version: 20170726003625) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "beers", force: :cascade do |t|
     t.string   "name"
@@ -19,9 +22,10 @@ ActiveRecord::Schema.define(version: 20170718194848) do
     t.integer  "ibu"
     t.string   "description"
     t.string   "image_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "brewery"
+    t.boolean  "featured",    default: false
   end
 
   create_table "breweries", force: :cascade do |t|
@@ -48,7 +52,8 @@ ActiveRecord::Schema.define(version: 20170718194848) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_wishlists_on_user_id"
+    t.index ["user_id"], name: "index_wishlists_on_user_id", using: :btree
   end
 
+  add_foreign_key "wishlists", "users"
 end
