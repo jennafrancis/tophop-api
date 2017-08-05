@@ -1,6 +1,6 @@
 class Api::BeersController < ApplicationController
   def index
-    @beers = Beer.all
+    @beers = Beer.order("created_at DESC").all
     render json: @beers
   end
 
