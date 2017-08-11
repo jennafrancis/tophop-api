@@ -1,4 +1,4 @@
-## TopHop
+# TopHop
 
 “At TopHop, we know that life is better when you’re hoppy. That’s why we religiously taste new releases from our favoritie breweries and report back to you with only the best.” - Jenna Francis, Founder and CTO
 
